@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterCompanyRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
@@ -41,5 +44,34 @@ class AuthController extends Controller
             'user' => $user,
             'token' => $user->createToken('laravel_api_token')->plainTextToken
         ]);
+    }
+
+    public function registerCompany(RegisterCompanyRequest $request) {
+        $data = $request->getData();
+
+        $path = $request->file('image_url')->store('companylogo', 'public');
+
+        $user = User::create([
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'role' => $data['role'],
+            'status' => $data['status']
+        ]);
+
+        $company = Company::create([
+            'user_id' => $user->id,
+            'company_name' => $data['company_name'],
+            'company_category' => $data['company_category'],
+            'company_description' => $data['company_description'],
+            'company_address' => $data['company_address'],
+            'total_employee' => $data['total_employee'],
+            'image_url' => $path,
+        ]);
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Registrasi berhasil!',
+            'data' => $company,
+        ], 201);
     }
 }
