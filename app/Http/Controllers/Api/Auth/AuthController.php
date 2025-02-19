@@ -58,7 +58,7 @@ class AuthController extends Controller
             'status' => $data['status']
         ]);
 
-        $company = Company::create([
+        Company::create([
             'user_id' => $user->id,
             'company_name' => $data['company_name'],
             'company_category' => $data['company_category'],
@@ -68,10 +68,6 @@ class AuthController extends Controller
             'image_url' => $path,
         ]);
         
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Registrasi berhasil!',
-            'data' => $company,
-        ], 201);
+        return $this->sendResponse('Registrasi berhasil', 201);
     }
 }

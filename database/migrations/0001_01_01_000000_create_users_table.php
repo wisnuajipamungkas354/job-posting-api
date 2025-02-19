@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role', ['company', 'umum', 'superadmin']);
             $table->boolean('status');
-            $table->rememberToken();
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
 
