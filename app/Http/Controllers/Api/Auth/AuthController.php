@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GeneralRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterCompanyRequest;
 use App\Http\Requests\RegisterRequest;
@@ -69,5 +70,10 @@ class AuthController extends Controller
         ]);
         
         return $this->sendResponse('Registrasi berhasil', 201);
+    }
+
+    public function addGeneralUser(GeneralRequest $request)
+    {
+
     }
 }

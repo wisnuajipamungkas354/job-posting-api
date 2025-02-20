@@ -25,7 +25,8 @@ class CompanyJobController extends Controller
     public function store(CompanyJobRequest $companyJobRequest)
     {
         $data = $companyJobRequest->validated();
-        $data = ['company_id' => auth()->user()->id] + $data;
+        $user = $this->getUserProfile();
+        $data = ['company_id' => $user->id] + $data;
 
         CompanyJob::create($data);
 

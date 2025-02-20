@@ -48,6 +48,10 @@ class User extends Authenticatable
         ];
     }
 
+    public function general() {
+        return $this->hasOne(General::class);
+    }
+
     public function company() {
         return $this->hasOne(Company::class);
     }

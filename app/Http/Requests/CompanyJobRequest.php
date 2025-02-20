@@ -13,7 +13,7 @@ class CompanyJobRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->user()->role === 'company';
     }
 
     /**
