@@ -37,9 +37,9 @@ abstract class Controller
         $user = [];
 
         if(auth()->user()->role === 'company') {
-            $user = Company::query()->where('user_id', '=', auth()->user()->id)->first(['id', 'email', 'role', 'status']);
-        } elseif(auth()->user()->role === 'umum') {
-            $user = General::query()->where('user_id', '=', auth()->user()->id)->first(['id', 'email', 'role', 'status']);
+            $user = Company::query()->where('user_id', '=', auth()->user()->id)->first(['id', 'company_name', 'company_category']);
+        } elseif(auth()->user()->role === 'general') {
+            $user = General::query()->where('user_id', '=', auth()->user()->id)->first(['id', 'full_name', 'gender']);
         }
 
         return $user;

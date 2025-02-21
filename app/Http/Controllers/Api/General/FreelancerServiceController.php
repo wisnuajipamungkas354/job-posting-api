@@ -26,7 +26,7 @@ class FreelancerServiceController extends Controller
         $data = $request->validated();
         $user = $this->getUserProfile();
 
-        $data = ['user_id' => $user->id] + $data;
+        $data = ['general_id' => $user->id] + $data;
 
         FreelancerService::create($data);
 
