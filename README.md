@@ -1,66 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Backend Job Posting
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Selamat Datang di Aplikasi Backend Job Posting Kita Bantu Indonesia (KBI)!.
 
-## About Laravel
+## About Aplikasi Job Posting KBI
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi Job Posting Kita Bantu Indonesia (KBI) adalah sebuah aplikasi backend yang dirancang untuk membuat proses pencarian kerja lebih mudah dan efisien. Aplikasi ini memungkinkan pengguna untuk mencari lowongan pekerjaan, mengirimkan lamaran, dan juga mencari jasa freelancer yang tersedia di aplikasi. Aplikasi ini juga dilengkapi dengan fitur-fitur lain seperti perusahaan ataupun freelancer dapat mendaftar dan memposting lowongan pekerjaan atau jasa yang mereka tawarkan kepada pengguna secara umum.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Cara Installasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Adapun cara menggunakan aplikasi backend ini adalah sebagai berikut:
+1. Clone repository ini menggunakan perintah `git clone https://github.com/your-usernam
+2. Pindah ke direktori repository yang telah di clone menggunakan perintah `cd nama
+3. Instal semua dependensi yang dibutuhkan menggunakan perintah `composer install`
+4. Duplikasi file `.env.example` dan ganti nama file nya menjadi `.env`
+5. Jalankan perintah `php artisan migrate` untuk menjalankan migrasi database
+6. Kemudian jalankan perintah `php artisan db:seed` untuk menjalankan seeding data dummy
+7. Lalu jalankan perintah `php artisan serve` untuk memulai server aplikasi
+8. Untuk melihat route yang tersedia, jalankan perintah `php artisan route:list`
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Dokumentasi API
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Dokumentasi API aplikasi ini dapat diakses di [link ini](https://kbi-intern-fullstack.postman.co/workspace/Team-Workspace~c4f952ee-843b-475a-897e-ba55f834b350/collection/42391783-a094d6ed-d664-48f3-ad4c-9ed0aab99c48?action=share&creator=42391783&active-environment=42391783-f9dac5e7-58c8-48c1-8a70-ac2edf323730)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Atau Anda juga bisa melihat list API yang tersedia di bawah ini:
 
-## Laravel Sponsors
+### Autentikasi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **POST /api/auth/login**: Untuk melakukan login
+- **POST /api/auth/register**: Untuk melakukan registrasi user umum & freelancer
+- **POST /api/auth/general-profile**: Untuk mengisi data lengkap user umum & freelancer
+- **POST /api/auth/register-company**: Untuk melakukan registrasi perusahaan
+- **GET /logout**: Untuk melakukan logout
 
-### Premium Partners
+Adapun untuk default akun yang dapat digunakan untuk melakukan login adalah sebagai berikut:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Akun Company**
+- **Email:** `company@kbi.com`
+- **Password:** `company1234`
 
-## Contributing
+**Akun General/Freelancer**
+- **Email:** `general@kbi.com`
+- **Password:** `general1234`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Job Posting
 
-## Code of Conduct
+#### Company
+- **GET /api/company-job**: Mendapatkan list lowongan pekerjaan dari perusahaan
+- **POST /api/company-job**: Membuat lowongan pekerjaan baru
+- **PUT /api/company-job/{id}**: Mengedit data lowongan pekerjaan
+- **DELETE /api/company-job/{id}**: Menghapus lowongan pekerjaan
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Freelancer
+- **GET /api/freelancer-service**: Mendapatkan list produk/jasa freelancer yang tersedia
+- **POST /api/freelancer-service**: Membuat produk/jasa freelancer
+- **PUT /api/freelancer-service/{id}**: Mengedit data produk/jasa freelancer
+- **DELETE /api/freelancer-service/{id}**: Menghapus produk/jasa freelancer

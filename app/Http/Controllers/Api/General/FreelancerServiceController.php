@@ -34,15 +34,6 @@ class FreelancerServiceController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(FreelancerService $freelancerService)
-    {
-        return $this->sendResponse('Berhasil mengambil data', 200, $freelancerService);
-    }
-
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(FreelancerServiceRequest $request, FreelancerService $freelancerService)
