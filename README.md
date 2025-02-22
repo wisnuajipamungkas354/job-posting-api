@@ -9,7 +9,7 @@ Aplikasi Job Posting Kita Bantu Indonesia (KBI) adalah sebuah aplikasi backend y
 ## Cara Installasi
 
 Adapun cara menggunakan aplikasi backend ini adalah sebagai berikut:
-1. Clone repository ini menggunakan perintah `git clone https://github.com/your-usernam
+1. Clone repository ini menggunakan perintah `git clone https://github.com/irvanhau/fullstack-kbi-api.git
 2. Pindah ke direktori repository yang telah di clone menggunakan perintah `cd nama
 3. Instal semua dependensi yang dibutuhkan menggunakan perintah `composer install`
 4. Duplikasi file `.env.example` dan ganti nama file nya menjadi `.env`
