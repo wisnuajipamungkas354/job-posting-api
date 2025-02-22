@@ -21,7 +21,7 @@ Adapun cara menggunakan aplikasi backend ini adalah sebagai berikut:
 
 ## Dokumentasi API
 
-Dokumentasi API aplikasi ini dapat diakses di [link ini](https://kbi-intern-fullstack.postman.co/workspace/Team-Workspace~c4f952ee-843b-475a-897e-ba55f834b350/collection/42391783-a094d6ed-d664-48f3-ad4c-9ed0aab99c48?action=share&creator=42391783&active-environment=42391783-f9dac5e7-58c8-48c1-8a70-ac2edf323730)
+Dokumentasi API aplikasi ini dapat diakses di [link ini](https://www.postman.com/wisnuajipamungkas/kbi/collection/3zll3zl/kbi?action=share&creator=42391783)
 
 Atau Anda juga bisa melihat list API yang tersedia di bawah ini:
 
